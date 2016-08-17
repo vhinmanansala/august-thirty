@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #351846;
+}
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+	width: 600px;
+}
+
+#contentWrapper {
+  display: table;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+#contentWrapper #content {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+#contentWrapper #content h1 {
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  font-size: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
