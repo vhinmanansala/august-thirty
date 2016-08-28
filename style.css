@@ -2,7 +2,6 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  background: #351846;
 }
 
 canvas {
@@ -11,23 +10,37 @@ canvas {
   height: 100%;
 }
 
-#contentWrapper {
+#wrapper {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+#wrapper #contentWrapper {
   display: table;
   height: 100%;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
-
-#contentWrapper #content {
+#wrapper #contentWrapper #content {
   display: table-cell;
-  text-align: center;
   vertical-align: middle;
 }
-
-#contentWrapper #content img {
-  width: 300px;
+#wrapper #thumbnailSlider {
+  display: block;
   position: relative;
-  z-index: 999;
+}
+
+#imageHeading {
+  display: block;
+  margin: 0 auto 60px;
+  width: 300px;
+}
+
+.swiper-slide img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
