@@ -348,8 +348,15 @@ void main(void) {
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-    		var windowWidth = $('#wrapper').width() + 17;
+    	var everythingLoaded = setInterval(function() {
+			if (/loaded|complete/.test(document.readyState)) {
+				clearInterval(everythingLoaded);
+				init(); // this is the function that gets called when everything is loaded
+			}
+		}, 10);
+
+		function init() {
+			var windowWidth = $('#wrapper').width() + 17;
 
             $('#thumbnailSlider').css('max-width', windowWidth);
 
@@ -369,6 +376,10 @@ void main(void) {
             		swiper.slideTo(key, 300);
             	});
             });
+		}
+
+        $(document).ready(function() {
+    		
         });
     </script>
 </html>
