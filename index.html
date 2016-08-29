@@ -11,6 +11,9 @@
 </head>
 
 <body>
+	<div id="pageLoader">
+		
+	</div>
 	<div class="mobile">
 		<div class="mobileWrapper">
 			<div class="mobileContent">
@@ -356,7 +359,11 @@ void main(void) {
 		}, 10);
 
 		function init() {
-			var windowWidth = $('#wrapper').width() + 17;
+			$('#pageLoader').fadeOut();
+		}
+
+        $(document).ready(function() {
+    		var windowWidth = $('#wrapper').width() + 17;
 
             $('#thumbnailSlider').css('max-width', windowWidth);
 
@@ -376,10 +383,6 @@ void main(void) {
             		swiper.slideTo(key, 300);
             	});
             });
-		}
-
-        $(document).ready(function() {
-    		
         });
     </script>
 </html>
