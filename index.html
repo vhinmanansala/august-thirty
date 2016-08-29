@@ -11,7 +11,11 @@
 
 <body>
 	<div class="mobile">
-		<h1>Please use laptop or desktop to view this website.</h1>	
+		<div class="mobileWrapper">
+			<div class="mobileContent">
+				<h1>Please use laptop or desktop to view this website.</h1>	
+			</div>
+		</div>
 	</div>
 
     <div id="wrapper" class="desktop">
@@ -45,8 +49,10 @@
         </div>
     </div>
 
-    <canvas id="sakura"></canvas>
-    <div class="btnbg"></div>
+    <div class="desktop">
+    	<canvas id="sakura"></canvas>
+	    <div class="btnbg"></div>
+    </div>
 
     <!-- sakura shader -->
 <script id="sakura_point_vsh" type="x-shader/x_vertex">
