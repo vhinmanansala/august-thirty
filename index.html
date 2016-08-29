@@ -348,25 +348,20 @@ void main(void) {
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    	window.onload = function () {
-	    	var windowWidth = document.getElementById('wrapper').offsetWidth;
-	    	var width = windowWidth + 17;
-
-	    	document.getElementById('thumbnailSlider').style.maxWidth = width + "px";
-
-	    	var swiper = new Swiper('.swiper-container', {
-	        	pagination: '.swiper-pagination',
-	            slidesPerView: 8,
-	            centeredSlides: true,
-	            paginationClickable: true,
-	            spaceBetween: 0,
-	            grabCursor: true,
-	        });
-    	}
-
-    	
-
         $(document).ready(function() {
+    		var windowWidth = $('#wrapper').width() + 17;
+
+            $('#thumbnailSlider').css('max-width', windowWidth);
+
+            var swiper = new Swiper('.swiper-container', {
+            	pagination: '.swiper-pagination',
+                slidesPerView: 8,
+                centeredSlides: true,
+                paginationClickable: true,
+                spaceBetween: 0,
+                grabCursor: true,
+            });
+
             var slides = $('.swiper-slide');
 
             $.each(slides, function(key, value) {
