@@ -379,6 +379,14 @@ void main(void) {
                 spaceBetween: 0,
                 grabCursor: true,
             });
+
+            var slides = $('.swiper-slide');
+
+            $.each(slides, function(index, value) {
+            	$(this).click(function() {
+            		swiper.slideTo(index, 300);
+            	});
+            });
         });
     </script>
 </html>
