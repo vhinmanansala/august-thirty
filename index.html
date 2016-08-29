@@ -348,38 +348,27 @@ void main(void) {
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+    	if (document.readyState == 'complete') {
+    		var windowWidth = $('#wrapper').width() + 17;
 
-    	// Polling for the sake of my intern tests
-		var interval = setInterval(function() {
-		    if(document.readyState === 'complete') {
-		        clearInterval(interval);
-		        done();
-		    }    
-		}, 100);
+            $('#thumbnailSlider').css('max-width', windowWidth);
 
-        $(document).ready(function() {
-        	if (document.readyState == 'complete') {
-        		var windowWidth = $('#wrapper').width() + 17;
+            var swiper = new Swiper('.swiper-container', {
+            	pagination: '.swiper-pagination',
+                slidesPerView: 8,
+                centeredSlides: true,
+                paginationClickable: true,
+                spaceBetween: 0,
+                grabCursor: true,
+            });
 
-	            $('#thumbnailSlider').css('max-width', windowWidth);
+            var slides = $('.swiper-slide');
 
-	            var swiper = new Swiper('.swiper-container', {
-	            	pagination: '.swiper-pagination',
-	                slidesPerView: 8,
-	                centeredSlides: true,
-	                paginationClickable: true,
-	                spaceBetween: 0,
-	                grabCursor: true,
-	            });
-
-	            var slides = $('.swiper-slide');
-
-	            $.each(slides, function(key, value) {
-	            	$(this).click(function() {
-	            		swiper.slideTo(key, 300);
-	            	});
-	            });
-        	}
-        });
+            $.each(slides, function(key, value) {
+            	$(this).click(function() {
+            		swiper.slideTo(key, 300);
+            	});
+            });
+    	}
     </script>
 </html>
