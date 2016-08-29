@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.css">
 </head>
 
 <body>
@@ -343,11 +343,20 @@ void main(void) {
             $('#thumbnailSlider').css('max-width', windowWidth);
 
             var swiper = new Swiper('.swiper-container', {
+            	pagination: '.swiper-pagination',
                 slidesPerView: 8,
                 centeredSlides: true,
                 paginationClickable: true,
                 spaceBetween: 0,
                 grabCursor: true,
+            });
+
+            var slides = $('.swiper-slide');
+
+            $.each(slides, function(key, value) {
+            	$(this).click(function() {
+            		swiper.slideTo(key, 300);
+            	});
             });
         });
     </script>
