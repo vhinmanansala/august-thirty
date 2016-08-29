@@ -349,22 +349,22 @@ void main(void) {
 
     <script type="text/javascript">
     	window.onload = function () {
-	    	document.getElementById('thumbnailSlider').style.display = 'block';
+	    	var windowWidth = document.getElementById('wrapper').offsetWidth;
+	    	var width = windowWidth + 17;
+
+	    	document.getElementById('thumbnailSlider').style.maxWidth = width + "px";
+
+	    	var swiper = new Swiper('.swiper-container', {
+	        	pagination: '.swiper-pagination',
+	            slidesPerView: 8,
+	            centeredSlides: true,
+	            paginationClickable: true,
+	            spaceBetween: 0,
+	            grabCursor: true,
+	        });
     	}
 
-    	var windowWidth = document.getElementById('wrapper').offsetWidth;
-    	var width = windowWidth + 17;
-
-    	document.getElementById('thumbnailSlider').style.maxWidth = width + "px";
-
-    	var swiper = new Swiper('.swiper-container', {
-        	pagination: '.swiper-pagination',
-            slidesPerView: 8,
-            centeredSlides: true,
-            paginationClickable: true,
-            spaceBetween: 0,
-            grabCursor: true,
-        });
+    	
 
         $(document).ready(function() {
             var slides = $('.swiper-slide');
