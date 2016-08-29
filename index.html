@@ -349,6 +349,14 @@ void main(void) {
 
     <script type="text/javascript">
 
+    	// Polling for the sake of my intern tests
+		var interval = setInterval(function() {
+		    if(document.readyState === 'complete') {
+		        clearInterval(interval);
+		        done();
+		    }    
+		}, 100);
+
         $(document).ready(function() {
         	if (document.readyState == 'complete') {
         		var windowWidth = $('#wrapper').width() + 17;
