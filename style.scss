@@ -10,6 +10,16 @@ canvas {
 	height: 100%;
 }
 
+#pageLoader {
+	background: #ffffff;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 999999;
+}
+
 #wrapper {
 	height: 100%;
 	left: 0;
