@@ -87,3 +87,44 @@ canvas {
 		-mz-transtion-duration: .3s;
 	}
 }
+
+@media only screen 
+and (max-width : 767px) {
+	.desktop {
+		display: none;
+	}
+
+	.mobile {
+		display: block;
+		height: 100%;
+		position: relative;
+	}
+
+	.mobileWrapper {
+		display: table;
+		height: 100%;
+		left: 0;
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 100%;
+
+		.mobileContent {
+			display: table-cell;
+			padding: 60px;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+}
+
+@media only screen
+and (min-width: 768px) {
+	.mobile {
+		display: none;
+	}
+
+	.desktop {
+		display: block;
+	}
+}
