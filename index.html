@@ -349,19 +349,22 @@ void main(void) {
 
     <script type="text/javascript">
     	if (document.readyState == 'complete') {
-    		var windowWidth = $('#wrapper').width() + 17;
+	    	var windowWidth = document.getElementById('wrapper').offsetWidth;
+	    	var width = windowWidth + 17;
 
-            $('#thumbnailSlider').css('max-width', windowWidth);
+	    	document.getElementById('thumbnailSlider').style.maxWidth = width + "px";
 
-            var swiper = new Swiper('.swiper-container', {
-            	pagination: '.swiper-pagination',
-                slidesPerView: 8,
-                centeredSlides: true,
-                paginationClickable: true,
-                spaceBetween: 0,
-                grabCursor: true,
-            });
+	    	var swiper = new Swiper('.swiper-container', {
+	        	pagination: '.swiper-pagination',
+	            slidesPerView: 8,
+	            centeredSlides: true,
+	            paginationClickable: true,
+	            spaceBetween: 0,
+	            grabCursor: true,
+	        });
+    	}
 
+        $(document).ready(function() {
             var slides = $('.swiper-slide');
 
             $.each(slides, function(key, value) {
@@ -369,6 +372,6 @@ void main(void) {
             		swiper.slideTo(key, 300);
             	});
             });
-    	}
+        });
     </script>
 </html>
